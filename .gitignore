@@ -1,0 +1,13 @@
+# Compiled files
+.out
+.ee
+.o
+
+# Build folders
+/build
+
+# VS Code
+.vscode/
+
+# Mac
+.DS-Store
