@@ -1,0 +1,22 @@
+#ifndef CONTACT_MANAGER_HPP
+#define CONTACT_MANAGER_HPP
+
+#include <vector>
+#include <string>
+#include "contact.hpp"
+
+class ContactManager {
+private:
+	std::vector<Contact> contacts;
+
+public:
+	void addContact(const Contact& contact);
+
+	void deleteContact(const std::string& phone);
+
+	Contact* searchByPhone(const std::string& phone);
+
+	void displayAll() const;
+};
+
+#endif
