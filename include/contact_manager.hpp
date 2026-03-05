@@ -12,9 +12,9 @@ private:
 public:
 	void addContact(const Contact& contact);
 
-	void deleteContact(const std::string& phone);
+	void removeContact(const std::string& phone);
 
-	Contact* searchByPhone(const std::string& phone);
+	Contact* searchContact(const std::string& phone);
 
 	void displayAll() const;
 };
