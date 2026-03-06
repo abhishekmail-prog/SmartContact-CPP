@@ -1,4 +1,4 @@
-#include <../include/contact_manager.cpp>
+#include "../include/contact_manager.hpp"
 #include <iostream>
 #include <algorithm>
 
@@ -6,7 +6,7 @@ void ContactManager::addContact(const Contact& contact)  {
 	contacts.push_back(contact);
 }
 
-void removeContact(const std::string& name) {
+void ContactManager::removeContact(const std::string& name) {
 	
 	// searches from very frist contact to the last.
 	auto it = std::remove_if(contacts.begin(), contacts.end(), 
@@ -27,7 +27,7 @@ void removeContact(const std::string& name) {
 
 Contact* ContactManager::searchContact(const std::string& name) {
 	for(Contact& contact : contacts) {
-		if(contact.getname() == name) {
+		if(contact.getName() == name) {
 			return &contact;
 		}
 	}

@@ -16,7 +16,7 @@ public:
 
 	Contact* searchContact(const std::string& phone);
 
-	void displayAll() const;
+	void displayContacts() const;
 };
 
 #endif

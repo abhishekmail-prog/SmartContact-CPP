@@ -1,14 +1,16 @@
 #include "../include/contact.hpp"
 #include <cctype>
 
-Contact::Contact(const std::string& name, const std::string& phone) {
+Contact::Contact(const std::string& name, const std::string& phone, const std::string& email) {
 	// We validate first
 	validateName(name);  
 	validatePhone(phone);
+	validateEmail(email);
 
 	// Then assign it
 	this->name = name;
 	this->phone = phone;
+	this->email = email;
 }
 
 void Contact::validateName(const std::string& name) {

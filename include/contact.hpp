@@ -16,7 +16,7 @@ private:
 
 public:
 	// Constructor
-	Contact(const std::string& name, const std::string& phone);
+	Contact(const std::string& name, const std::string& phone, const std::string& email);
 
 	// Optional email setter
 	void setEmail(const std::string& email);
