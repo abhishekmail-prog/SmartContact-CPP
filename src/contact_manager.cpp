@@ -35,4 +35,18 @@ Contact* ContactManager::searchContact(const std::string& name) {
 	return nullptr;
 }
 
+void ContactManager::displayContacts() const {
+	if(contacts.empty()) {
+		std::cout << "No conatcts available\n";
+		return;
+	}
 
+	int index = 1;
+
+	for(const Contact& c : contacts) {
+		std::cout << index++ << ". "
+			  << c.getName() << " | "
+			  << c.getPhone() << " | "
+			  << c.getEmail() << "\n";
+	}
+}
