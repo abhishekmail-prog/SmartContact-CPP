@@ -1,6 +1,7 @@
 # Compiled files
 .out
-.ee
+*.out
+.exe
 .o
 
 # Build folders
