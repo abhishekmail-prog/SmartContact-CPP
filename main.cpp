@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "include/contact_manager.hpp"
 
 int main() {
@@ -19,9 +20,10 @@ int main() {
 		switch(choice) {
 			case 1: {
 				std::string name, phone, email;
-				
+				std::cin.ignore(); // clears leftover newline
+
 				std::cout << "Enter name: ";
-				std::cin >> name;
+				getline(std::cin, name);
 
 				std::cout << "Enter phone: ";
 				std::cin >> phone;

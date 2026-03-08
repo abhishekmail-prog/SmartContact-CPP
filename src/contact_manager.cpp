@@ -1,6 +1,7 @@
 #include "../include/contact_manager.hpp"
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 void ContactManager::addContact(const Contact& contact)  {
 	contacts.push_back(contact);
@@ -43,10 +44,15 @@ void ContactManager::displayContacts() const {
 
 	int index = 1;
 
+	std::cout << "S.No" << std::setw(25) << " | "
+		  << "Name" << std::setw(25) << " | "
+		  << "Phone Number" << std::setw(25) << " | "
+		  << "Email" << std::setw(25) << '\n';
+
 	for(const Contact& c : contacts) {
-		std::cout << index++ << ". "
-			  << c.getName() << " | "
-			  << c.getPhone() << " | "
+		std::cout << std::left << index++ << ". " <<  std::setw(25)
+			  << c.getName() << " | " << std::setw(25)
+			  << c.getPhone() << " | " << std::setw(25)
 			  << c.getEmail() << "\n";
 	}
 }
