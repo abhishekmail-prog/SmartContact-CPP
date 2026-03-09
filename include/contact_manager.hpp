@@ -17,6 +17,10 @@ public:
 	Contact* searchContact(const std::string& phone);
 
 	void displayContacts() const;
+
+	void saveContacts(const std::string& filename) const;
+
+	void loadContacts(const std::string& filename);
 };
 
 #endif

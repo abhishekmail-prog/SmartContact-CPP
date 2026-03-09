@@ -5,6 +5,8 @@
 int main() {
 	
 	ContactManager manager;
+	manager.loadContacts("contacts.txt");
+
 	int choice;
 
 	while(true) {
@@ -13,7 +15,8 @@ int main() {
 		std::cout << "2. Remove Contact\n";
 		std::cout << "3. Search Contact\n";
 		std::cout << "4. Display Contacts\n";
-		std::cout << "5. Exit\n";
+		std::cout << "5. Save Contacts\n";
+		std::cout << "56. Exit\n";
 		std::cout << "Enter your choice: ";
 		std::cin >> choice;
 
@@ -87,6 +90,12 @@ int main() {
 			}
 
 			case 5: {
+				manager.saveContacts("contacts.txt");
+				std::cout << "Contacts saved. Exiting...\n";
+				return 0;
+			}
+
+			case 6: {
 				std::cout << "Exiting program...\n";
 				return 0;
 			}

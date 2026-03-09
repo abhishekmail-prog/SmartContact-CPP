@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
+#include <fstream>
 
 void ContactManager::addContact(const Contact& contact)  {
 	contacts.push_back(contact);
@@ -54,5 +55,46 @@ void ContactManager::displayContacts() const {
 			  << c.getName() << " | " << std::setw(25)
 			  << c.getPhone() << " | " << std::setw(25)
 			  << c.getEmail() << "\n";
+	}
+}
+
+void ContactManager::saveContacts(const std::string& filename) const {
+	
+	std::ofstream file(filename); // open file
+
+	if(!file) {
+		std::cerr << "Error opening file!.\n";
+		return;
+	}
+
+	for(const Contact& c : contacts) {
+		file << c.getName() << ", "
+		     << c.getPhone() << ", "
+		     << c.getEmail() << "\n";
+	}
+
+}
+
+void ContactManager::loadContacts(const std::string& filename) {
+
+	std::ifstream file(filename);
+
+	if(!file) {
+		return;
+	}
+
+	std::string name, phone, email;
+
+	while(std::getline(file, name, ',') &&
+	      std::getline(file, phone, ',') &&
+	      std::getline(file, email)) {
+		
+		try {
+			Contact contact(name, phone, email);
+			contacts.push_back(contact);
+		}
+
+		catch(...) {
+		}
 	}
 }
