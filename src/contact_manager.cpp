@@ -48,7 +48,7 @@ void ContactManager::displayContacts() const {
 	std::cout << "S.No" << std::setw(25) << " | "
 		  << "Name" << std::setw(25) << " | "
 		  << "Phone Number" << std::setw(25) << " | "
-		  << "Email" << std::setw(25) << '\n';
+		  << "Email" << '\n';
 
 	for(const Contact& c : contacts) {
 		std::cout << std::left << index++ << ". " <<  std::setw(25)
@@ -68,14 +68,17 @@ void ContactManager::saveContacts(const std::string& filename) const {
 	}
 
 	for(const Contact& c : contacts) {
-		file << c.getName() << ", "
-		     << c.getPhone() << ", "
+		file << c.getName() << ","
+		     << c.getPhone() << ","
 		     << c.getEmail() << "\n";
 	}
 
+	file.close();
 }
 
 void ContactManager::loadContacts(const std::string& filename) {
+
+	contacts.clear();
 
 	std::ifstream file(filename);
 
