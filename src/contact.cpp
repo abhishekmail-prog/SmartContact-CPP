@@ -58,3 +58,15 @@ const std::string& Contact::getPhone() const {
 const std::string& Contact::getEmail() const {
 	return email;
 }
+
+void Contact::set_Name(const std::string& name) {
+	this->name = name;
+}
+
+void Contact::set_Phone(const std::string& phone) {
+	this->phone = phone;
+}
+
+void Contact::set_Email(const std::string& email) {
+	this->email = email;
+}

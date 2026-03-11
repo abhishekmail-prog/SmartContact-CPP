@@ -25,6 +25,11 @@ public:
 	const std::string& getName() const;
 	const std::string& getPhone() const;
 	const std::string& getEmail() const;
+
+	// Setters
+	void set_Name(const std::string& name);
+	void set_Phone(const std::string& phone);
+	void set_Email(const std::string& email);
 };
 
 #endif

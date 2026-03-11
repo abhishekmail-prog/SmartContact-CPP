@@ -101,3 +101,31 @@ void ContactManager::loadContacts(const std::string& filename) {
 		}
 	}
 }
+
+void ContactManager::editContacts(const std::string& name) {
+
+	for(Contact &c : contacts) {
+
+		if(c.getName() == name) {
+			std::string newName, newPhone, newEmail;
+	
+			std::cout << "Enter new name: ";
+			std::getline(std::cin, newName);
+			
+			std::cout << "Enter new phone: ";
+			std::getline(std::cin, newPhone);
+
+			std::cout << "Enter new email: ";
+			std::getline(std::cin, newEmail);
+	
+			c.set_Name(newName);
+			c.set_Phone(newPhone);
+			c.set_Email(newEmail);
+
+			std::cout << "Contact updated sucessfully!\n";
+	
+			return;
+		}
+	}
+	std::cout << "Contact not found.\n";
+}
