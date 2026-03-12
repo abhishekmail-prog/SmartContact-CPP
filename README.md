@@ -1,20 +1,21 @@
 # Smart Contact Manager (C++)
 
-A simple Command Line Interface (CLI) Contact Manager built using C++ and 
-Object-Oriented Programming principles.
+A simple **Command Line Interface (CLI) Contact Manager** built using **C++** and **Object-Oriented Programming (OOP)** principles.
 
-This project lets you add, remove, search and display contacts from the terminal
-using a simple interactive menu. It uses OOP design, exception handling, modular
-project structure and C++ STL containers.
+This project allows users to **add, delete, search, edit, and display contacts** using a menu-driven terminal interface.  
+It also demonstrates **modular C++ design, file handling, exception handling, and usage of STL containers**.
 
 ---
 
 ## Features
 
-- Adds a new contact
-- Remove a contact by name
+- Add a new contact
+- Delete a contact by name
 - Search for a contact
-- Dipslay all contacts
+- Display all contacts
+- Edit existing contacts
+- Save contacts to a file
+- Load contacts automatically when the program starts
 - Input validation with exception handling
 - Interactive CLI menu
 - Modular project structure
@@ -23,15 +24,15 @@ project structure and C++ STL containers.
 
 ## Concepts Used
 
-This project demonstrates important C++ concepts:
+This project demonstrates several important **C++ programming concepts**:
 
 - Object-Oriented Programming (OOP)
 - Classes and Encapsulation
 - Constructors
 - Exception Handling
 - References and Const Correctness
-- STL Containers (std::vector)
-- Lambda Functions
+- STL Containers (`std::vector`)
+- File Handling (`ifstream`, `ofstream`)
 - Modular C++ Project Structure
 - CLI Application Design
 
@@ -39,7 +40,8 @@ This project demonstrates important C++ concepts:
 
 ## Project Structure
 
-SmartContact-CPP/
+```
+Smart-Contact-Manager/
 │
 ├── include/
 │   ├── contact.hpp
@@ -49,20 +51,41 @@ SmartContact-CPP/
 │   ├── contact.cpp
 │   └── contact_manager.cpp
 │
+├── data/
+│   └── contacts.txt
+│
 ├── main.cpp
 └── README.md
+```
 
 ---
 
 ## How to Compile and Run
 
-Compile the program using g++:
+Compile the program using **g++**:
 
-	g++ main.cpp src/contact.cpp src/contact_manager.cpp -o contact_manager
+```
+g++ main.cpp src/contact.cpp src/contact_manager.cpp -o contact_manager
+```
 
 Run the program:
 
-	./contact_manager
+```
+./contact_manager
+```
+
+---
+
+## Example Menu
+
+```
+1. Add Contact
+2. Delete Contact
+3. Search Contact
+4. Display Contacts
+5. Edit Contact
+6. Exit
+```
 
 ---
 
@@ -70,22 +93,22 @@ Run the program:
 
 Possible upgrades for this project:
 
-	- Save contacts to a file
-	- Load contacts at program startup
-	- Sort contacts alphabetiacally
-	- Faster searach using unordered_map
-	- Improve CLI Interface
-	- Add contact editing feature
+- Sort contacts alphabetically
+- Faster searching using `unordered_map`
+- Import / export contacts
+- Improve CLI interface
+- Add duplicate contact detection
+- Add contact IDs
 
 ---
 
 ## Learning Goal
 
-This project was build to practice C++ system design and object-oriented programming
-while building real command-line application.
+This project was built to practice **C++ system design and object-oriented programming** while building a real **command-line application**.
 
 ---
 
 ## License
 
-This project is open source and available for learning and experimentation.
+This project is open source and intended for **learning and experimentation**.
+
