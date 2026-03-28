@@ -80,7 +80,8 @@ void ContactManager::displayContacts() const {
 
 void ContactManager::saveContacts(const std::string& filename) const {
 	
-	std::ofstream file(filename); // open file
+	// open the file
+	std::ofstream file(filename);
 
 	if(!file) {
 		std::cerr << "Error opening file!.\n";

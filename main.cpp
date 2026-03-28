@@ -98,6 +98,13 @@ int main() {
 			}
 
 			case 6: {
+				std::string name;
+				std::cout << "Enter name to edit: ";
+				std::cin.ignore();
+				std::getline(std::cin, name);
+
+				manager.editContacts(name);
+				manager.saveContacts("data/contacts.txt");
 				
 				break;
 			}
