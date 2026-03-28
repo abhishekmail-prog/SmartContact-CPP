@@ -5,7 +5,7 @@
 int main() {
 	
 	ContactManager manager;
-	manager.loadContacts("contacts.txt");
+	manager.loadContacts("data/contacts.txt");
 
 	int choice;
 
@@ -91,6 +91,7 @@ int main() {
 			}
 
 			case 5: {
+			//	manager.loadContacts("data/contacts.txt");
 				manager.saveContacts("data/contacts.txt");
 				std::cout << "Contacts saved. Exiting...\n";
 				return 0;
@@ -105,8 +106,7 @@ int main() {
 				return 0;
 			}
 
-			default:
-				std::cout << "Invalid choice! Try again.\n";
+			default:			std::cout << "Invalid choice! Try again.\n";
 		}
 	}
 
