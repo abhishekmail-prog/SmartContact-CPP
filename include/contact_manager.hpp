@@ -14,7 +14,7 @@ public:
 
 	void removeContact(const std::string& phone);
 
-	Contact* searchContact(const std::string& phone);
+	void searchContact(const std::string& query);
 
 	void displayContacts() const;
 

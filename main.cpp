@@ -70,9 +70,9 @@ int main() {
 				std::cout << "Enter name to search: ";
 				std::cin >> name;
 
-				Contact* result = manager.searchContact(name);
+				manager.searchContact(name);
 				
-				if(result != nullptr) {
+			/*	if(result != nullptr) {
 					std::cout << "Contact Found:\n";
 					std::cout << result->getName() << " | "
 						  << result->getPhone() << " | "
@@ -80,7 +80,7 @@ int main() {
 				}
 				else {
 					std::cout << "Contact not found.\n";
-				}
+				}*/
 
 				break;
 			}

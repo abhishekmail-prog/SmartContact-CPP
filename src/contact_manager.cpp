@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <fstream>
+#include <algorithm>
 
 void ContactManager::addContact(const Contact& contact)  {
 	contacts.push_back(contact);
@@ -27,14 +28,33 @@ void ContactManager::removeContact(const std::string& name) {
 	contacts.erase(it, contacts.end());
 }
 
-Contact* ContactManager::searchContact(const std::string& name) {
-	for(Contact& contact : contacts) {
-		if(contact.getName() == name) {
-			return &contact;
+void ContactManager::searchContact(const std::string& query) {
+
+	bool found = false;
+
+	for(const Contact& c : contacts) {
+
+		std::string name = c.getName();
+
+		// Convert both to lowercase for cae-insensitivity
+		std::string lowerName = name;
+		std::string lowerQuery = query;
+
+		std::transform(lowerName.begin(), lowerName.end(), lowerName.begin(), ::tolower);
+		std::transform(lowerQuery.begin(), lowerQuery.end(), lowerQuery.begin(), ::tolower);
+
+		if(lowerName.find(lowerQuery) != std::string::npos) {
+			std::cout << "Name: " << c.getName() << '\n';
+			std::cout << "Phone: " << c.getPhone() << '\n';
+			std::cout << "Email: " << c.getEmail() << '\n';
+			std::cout << "-----------------------------------\n";
+			found = true;
 		}
 	}
 
-	return nullptr;
+	if(!found) {
+		std::cout << "No matching contacts found.\n";
+	}
 }
 
 void ContactManager::displayContacts() const {
